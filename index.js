@@ -19,8 +19,8 @@ const update = require('./public/scripts/updateApp.js');
 const MongoStore = require('connect-mongo');
 
 dotenv.config();
-port = process.env.PORT;
-hostname = process.env.HOSTNAME;
+port = process.env.PORT || 3000;
+hostname = '0.0.0.0';//process.env.HOSTNAME;
 const uri = process.env.MONGODB_URI;
 
 const app = express();
@@ -36,7 +36,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 db.connect();
 
-app.listen(port || 3000, hostname, function () {
+app.listen(port, hostname, function () {
     console.log('Server running at:');
     console.log('http://' + hostname + ':' + port);
 });
