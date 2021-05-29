@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 const path = require('path');
 const url = require('url');
-const uri = process.env.MONGODB_URI;
+
 
 const express = require('express');
 const session = require('express-session');
@@ -21,6 +21,7 @@ const MongoStore = require('connect-mongo');
 dotenv.config();
 port = process.env.PORT;
 hostname = process.env.HOSTNAME;
+const uri = process.env.MONGODB_URI;
 
 const app = express();
 app.use(session({ resave: true ,secret: '123456' , saveUninitialized: true}));
