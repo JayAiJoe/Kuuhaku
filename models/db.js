@@ -13,18 +13,10 @@ const options = {
 const database = {
 
     connect: function () {
-        if(process.env.MONGODB_URI){
-            mongoose.connect(process.env.MONGODB_URI, options, function (error) {
-                if (error) throw error;
-                console.log('Connected to: heroku');
-            });
-        }
-        else {
-            mongoose.connect(url, options, function (error) {
-                if (error) throw error;
-                    console.log('Connected to: ' + url);
-            });
-        }
+        mongoose.connect(process.env.MONGODB_URI || url, options, function (error) {
+            if (error) throw error;
+            console.log('Connected to:' + url);
+        });
     },
 
     insertOne: function (model, doc, callback) {

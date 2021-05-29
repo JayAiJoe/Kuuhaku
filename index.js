@@ -15,6 +15,8 @@ const db = require(`./models/db.js`);
 
 const update = require('./public/scripts/updateApp.js');
 
+const MongoStore = require('connect-mongo');
+
 dotenv.config();
 port = process.env.PORT;
 hostname = process.env.HOSTNAME;
@@ -46,7 +48,8 @@ app.use(session({
     rolling: true,      // refresh cookie age
     cookie: {
         maxAge: 12096e5 // two weeks
-    }
+    },
+    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/Kuuhaku' })
 }));
 
 update.updateAchievements();
