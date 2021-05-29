@@ -4,7 +4,7 @@
   "description": "S15\r IBRAHIM, Hans Oswald\r LOCSIN, Jose Ignacio\r TAN, Alison Chloe",
   "main": "index.js",
   "scripts": {
-	"start": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +13,7 @@
     "async": "^3.2.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "connect-mongo": "^4.4.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^9.0.1",
     "express": "^4.17.1",
