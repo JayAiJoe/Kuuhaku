@@ -44,7 +44,7 @@ app.listen(port, hostname, function () {
 // configure user session
 app.use(session({
     key: 'saved_username',
-    secret:'somesecret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     rolling: true,      // refresh cookie age
