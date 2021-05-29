@@ -4,6 +4,7 @@
   "description": "S15\r IBRAHIM, Hans Oswald\r LOCSIN, Jose Ignacio\r TAN, Alison Chloe",
   "main": "index.js",
   "scripts": {
+	"start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
