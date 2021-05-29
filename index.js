@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 const path = require('path');
 const url = require('url');
-//const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
 const express = require('express');
 const session = require('express-session');
@@ -50,7 +50,7 @@ app.use(session({
     cookie: {
         maxAge: 12096e5 // two weeks
     },
-    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/Kuuhaku' })
+    store: MongoStore.create({ mongoUrl: uri || 'mongodb://localhost:27017/Kuuhaku'})
 }));
 
 update.updateAchievements();
