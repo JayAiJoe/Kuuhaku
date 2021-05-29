@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Landing</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/landing.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="scripts/landing.js"></script>
+</head>
+
+<body>
+    <div class="popup-overlay" id="frm-pick-category">
+        <form class="popup-form" action="javascript:;" onsubmit="onSubmitFrmEditDisplayName(this)">
+            <div class="close" onclick="closeFrmPickCategory()">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span class="frm-title">Pick a Category</span>
+            <div class="cat-selector">
+                {{#each category}}
+                {{>category_selector}}
+                {{/each}}
+            </div>
+        </form>
+    </div>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-home fa-fw"></i>
+                        Home
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+
+            {{> navbar}}
+
+
+        </div>
+        <div class="col-6 col-s-7 card-col">
+            <div class="card">
+                <form method="get" action="/addExpense">
+                    <div class="card-row" id="add-expense-header">
+                        <label id="lbl1">NEW EXPENSE</label>
+                        <button type="submit" id="btn-add">Add</button>
+                    </div>
+                    <div class="card-row" id="add-expense-middle">
+                        <div class="input-container">
+                            <div class="input-label">
+                                <p>PHP</p>
+                            </div>
+                            <input type="text" placeholder="type a value" id="amt-input" class="field" name="amount">
+                        </div>
+                        <button type="button" id="category-btn" style="background-color: {{forButton.color}}"
+                            onclick="showFrmPickCategory()">
+                            <i class="fas {{forButton.icon}} fa-fw"></i>
+                            {{forButton.categoryName}}
+                        </button>
+                        <input type="text" style="display:none" id="hiddenCategoryInfo" name="category" value="Food">
+                    </div>
+                    <textarea name="description" placeholder="Include a short description of your expense here..."
+                        id="category-description" class="field"></textarea>
+                </form>
+            </div>
+            <div class="spacer"></div>
+            <div class="card">
+                <div class="card-row heading">
+                    <p>BALANCE</p>
+                    <p>PHP</p>
+                </div>
+                {{#each category}}
+                {{>landing_card}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Achievements</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/achievements.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+</head>
+
+<body>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-trophy fa-fw"></i>
+                        Achievements
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+            {{> navbar}}
+        </div>
+        <div class="col-6 col-s-7 card-col">
+
+            <div class="achievements">
+                {{#each unlocked}}
+                    {{> unlocked_achievement}}
+                {{/each}}
+                {{#each locked}}
+                    {{> locked_achievement}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+</body>
+
+</html>

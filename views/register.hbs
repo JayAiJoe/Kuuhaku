@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Register</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/register.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            Register
+        </div>
+
+        <form>
+            <div class="item">
+                <input type="text" placeholder="Username" class="clientinfo" id="user" name="username">
+            </div>
+            <div class="item">
+                <input type="password" placeholder="Password" class="clientinfo" id="pass" name="password">
+            </div>
+            <div class="footer">
+                <div id="error"></div>
+            </div>
+            <button type="button" class="btn" onclick="handleRegister()">Register New Account</button>
+            <p class="signup">Already have an account? <a href="login">Log in</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

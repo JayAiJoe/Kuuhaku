@@ -1,0 +1,24 @@
+{
+  "name": "apdevmp",
+  "version": "1.0.0",
+  "description": "S15\r IBRAHIM, Hans Oswald\r LOCSIN, Jose Ignacio\r TAN, Alison Chloe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "mongoose": "^5.12.9",
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7"
+  }
+}

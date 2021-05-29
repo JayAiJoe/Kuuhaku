@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Kuuhaku - About</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/landing.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="scripts/landing.js"></script>
+</head>
+
+<body>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-home fa-fw"></i>
+                        Home
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+
+            {{> navbar}}
+        </div>
+        <div class="col-6 col-s-7 card-col">
+            <h3 style="padding-left:1rem">NPM Modules:</h3>
+            <ol>
+                <li>mongodb</li>
+                <li>express</li>
+                <li>mongoose</li>
+                <li>dotenv</li>
+                <li>bcryptjs</li>
+                <li>asynch</li>
+                <li>body-parser</li>
+                <li>cookie-parser</li>
+                <li>express-session</li>
+                <li>http</li>
+                <li>path</li>
+                <li>url</li>
+                <li>hbs</li>
+            </ol>
+
+            <h3 style="padding-left:1rem">Assets:</h3>
+            <ol>
+                <li>Icons from fontawesome.com</li>
+                <li>Avatar Sprites by Sutemo from sutemo.itch.io</li>
+            </ol>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+</body>
+
+</html>

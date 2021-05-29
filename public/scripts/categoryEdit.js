@@ -1,0 +1,188 @@
+let jsonData = {
+    "icons": [
+        "address-book",
+        "address-card",
+        "adjust",
+        "ambulance",
+        "anchor",
+        "angle-double-down",
+        "angle-double-left",
+        "angle-double-right",
+        "angle-double-up",
+        "angle-down",
+        "angle-up",
+        "archive",
+        "archway",
+        "arrow-alt-circle-down",
+        "arrow-alt-circle-left",
+        "arrow-alt-circle-right",
+        "arrow-alt-circle-up",
+        "arrows-alt",
+        "asterisk",
+        "at",
+        "atlas",
+        "atom",
+        "award",
+        "baby",
+        "baby-carriage",
+        "backspace",
+        "backward",
+        "balance-scale",
+        "ban",
+        "band-aid",
+        "baseball-ball",
+        "basketball-ball",
+        "bath",
+        "battery-empty",
+        "battery-full",
+        "battery-half",
+        "battery-quarter",
+        "battery-three-quarters",
+        "bed",
+        "bell",
+        "bible",
+        "bicycle",
+        "binoculars",
+        "birthday-cake",
+        "blender",
+        "bolt",
+        "book",
+        "bowling-ball",
+        "box",
+        "bread-slice",
+        "briefcase",
+        "broom",
+        "brush",
+        "btc",
+        "building",
+        "bus",
+        "calendar",
+        "calendar-alt",
+        "calendar-check",
+        "calendar-day",
+        "camera",
+        "camera-retro",
+        "car-alt",
+        "car-side",
+        "cart-plus",
+        "cart-arrow-down",
+        "cash-register",
+        "cat",
+        "chalkboard",
+        "chalkboard-teacher",
+        "charging-station",
+        "chart-area",
+        "chart-bar",
+        "chart-line",
+        "chart-pie",
+        "chess-bishop",
+        "chess-king",
+        "chess-knight",
+        "chess-pawn",
+        "chess-queen",
+        "chess-rook",
+        "child",
+        "church",
+        "city",
+        "clinic-medical",
+        "clipboard",
+        "clock",
+        "cloud",
+        "cloud-moon",
+        "code",
+        "code-branch",
+        "coffee",
+        "cog",
+        "coins",
+        "comment",
+        "compass",
+        "concierge-bell",
+        "cookie",
+        "cookie-bite",
+        "couch",
+        "crow",
+        "crown",
+        "database",
+        "dog",
+        "dove",
+        "drafting-compass",
+        "dragon",
+        "drum",
+        "drumstick-bite",
+        "dumbbell",
+        "exchange-alt",
+        "file",
+        "file-alt",
+        "fill",
+        "fill-drip",
+        "fire-alt",
+        "fish",
+        "flag",
+        "football-ball",
+        "frog",
+        "gamepad",
+        "gas-pump",
+        "gem",
+        "gift",
+        "glasses",
+        "globe-africa",
+        "globe-americas",
+        "globe-asia",
+        "globe-europe",
+        "graduation-cap",
+        "guitar",
+        "hamburger",
+        "hammer",
+        "headphones",
+        "heart",
+        "helicopter",
+        "hiking",
+        "hippo",
+        "home",
+        "horse",
+        "horse-head",
+        "hourglass",
+        "house-damage",
+        "id-badge",
+        "id-card",
+        "id-card-alt",
+        "key",
+        "keyboard",
+        "kiwi-bird",
+        "leaf",
+        "lemon",
+        "lightbulb",
+        "location-arrow"
+    ]
+};
+
+$(document).ready(function () {
+    console.log(jsonData.icons);
+    loadIconList(jsonData.icons);
+});
+
+function loadIconList(ids) {
+    console.log("pass");
+    console.log(ids);
+
+    var iconlist = document.getElementById("frm-pick-icon");
+
+    ids.forEach(id => {
+        var radio = document.createElement("input");
+        radio.setAttribute("type", "radio");
+        radio.setAttribute("id", id);
+        radio.setAttribute("name", "caticon");
+        radio.setAttribute("value", id);
+
+        var label = document.createElement("label");
+        label.setAttribute("for", id);
+        var icon = document.createElement("i");
+        icon.classList.add("fas");
+        icon.classList.add("fa-" + id);
+        icon.classList.add("fa-lg");
+
+        label.appendChild(icon);
+        iconlist.appendChild(radio);
+        iconlist.appendChild(label);
+    });
+}

@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Account</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/account.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/account.js"></script>
+</head>
+
+<body>
+    <div class="popup-overlay" id="frm-edit-display-name">
+        <form class="popup-form" id="frm-editdisplayname">
+            <div class=" close" id="close-frmeditdisplayname">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span class="frm-title">Edit Display Name</span>
+            <div class="frm-input">
+                <div class="mini-header-1">DISPLAY NAME</div>
+                <input class="frm-text" type="text" id="input-newdisplayname">
+            </div>
+            <div class="frm-input">
+                <div class="mini-header-1">PASSWORD</div>
+                <input class="frm-text" type="password" id="pwd-newdisplayname">
+            </div>
+            <button class="submit" type="submit" id="btn-submitnewdisplayname">Submit Changes</button>
+        </form>
+    </div>
+    <div class=" popup-overlay" id="frm-edit-username">
+        <form class="popup-form" id="frm-editusername">
+            <div class="close" id="close-frmeditusername">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span class="frm-title">Edit Username</span>
+            <div class="frm-input">
+                <div class="mini-header-1">USERNAME</div>
+                <input class="frm-text" id="input-newusername" type="text">
+            </div>
+            <div class="frm-input">
+                <div class="mini-header-1">PASSWORD</div>
+                <input class="frm-text" id="pwd-newusername" type="password">
+            </div>
+            <button class="submit" type="submit" id="btn-submitnewusername">Submit Changes</button>
+        </form>
+    </div>
+    <div class=" popup-overlay" id="frm-change-pwd">
+        <form class="popup-form">
+            <div class="close" id="close-frmchangepwd">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span class="frm-title">Change Password</span>
+            <div class="frm-input">
+                <div class="mini-header-1">OLD PASSWORD</div>
+                <input class="frm-text" type="password" id="old-pwd">
+            </div>
+            <div class="frm-input">
+                <div class="mini-header-1">NEW PASSWORD</div>
+                <input class="frm-text" type="password" id="new-pwd">
+            </div>
+            <button class="submit" type="submit">Submit Changes</button>
+        </form>
+    </div>
+    <div class="popup-overlay" id="frm-feedback">
+        <form class="popup-form" method="post" action="deleteAccount">
+            <div class="close" id="close-frmfeedback">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span class="frm-title">Feedback Form</span>
+            <div class="theader">
+                <div class="mini-header-1 col-header">Liked it</div>
+                <div class="mini-header-1 col-header">Disliked it</div>
+            </div>
+            <div class="frm-row">
+                <div class="frm-label">Interface</div>
+                <input type="radio" name="interface" id="likeinterface" value="likeinterface">
+                <label for="likeinterface">
+                    <i class="fas fa-thumbs-up fa-lg"></i>
+                </label>
+                <input type="radio" name="interface" id="dislikeinterface" value="dislikeinterface">
+                <label for="dislikeinterface">
+                    <i class="fas fa-thumbs-down fa-lg"></i>
+                </label>
+            </div>
+            <div class="frm-row">
+                <div class="frm-label">Navigation</div>
+                <input type="radio" name="nav" id="likenav" value="likenav">
+                <label for="likenav">
+                    <i class="fas fa-thumbs-up fa-lg"></i>
+                </label>
+                <input type="radio" name="nav" id="dislikenav" value="dislikenav">
+                <label for="dislikenav">
+                    <i class="fas fa-thumbs-down fa-lg"></i>
+                </label>
+            </div>
+            <div class="frm-row">
+                <div class="frm-label">Experience</div>
+                <input type="radio" name="exp" id="likeexp" value="likeexp">
+                <label for="likeexp">
+                    <i class="fas fa-thumbs-up fa-lg"></i>
+                </label>
+                <input type="radio" name="exp" id="dislikeexp" value="dislikeexp">
+                <label for="dislikeexp">
+                    <i class="fas fa-thumbs-down fa-lg"></i>
+                </label>
+            </div>
+            <textarea placeholder="Comments/Suggestions" class="field"></textarea>
+            <button class="submit" type="submit" id="submit-frmfeedback">Submit Form</button>
+        </form>
+    </div>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-user-circle fa-fw"></i>
+                        Account
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+            {{> navbar}}
+        </div>
+        <div class="col-10 col-s-7 card-col">
+            <div class="app-content">
+                <div class="account">
+                    <div class="account-avatar" onclick="customizeAvatar()">
+                        {{> account_avatar}}
+                    </div>
+                    <div class="account-info">
+                        <div id="account-name">
+                            {{displayname}}
+                        </div>
+                        <div class="account-lvl">
+                            LVL <div id="lvl-num">{{level}}</div>
+                        </div>
+                        <div class="account-status-bars">
+                            <div class="account-status-type">
+                                <div class="account-status-header">
+                                    HP
+                                    <div id="hp-num">
+                                        {{hp}}/{{maxHp}}
+                                    </div>
+                                </div>
+                                {{> account_status_bar color=hpColor percent=hpPercent}}
+                            </div>
+                            <div class="account-status-type">
+                                <div class="account-status-header">
+                                    XP
+                                    <div id="xp-num">
+                                        {{xp}}/{{maxXp}}
+                                    </div>
+                                </div>
+                                {{> account_status_bar color=xpColor percent=xpPercent}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-settings">
+                    <h1 class="mini-header-1">DISPLAY NAME</h1>
+                    <div class="edit-row">
+                        <div id="display-name">{{displayname}}</div>
+                        <button id="edit-btn" onclick="showFrmEditDisplayName()">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <h1 class="mini-header-1">USERNAME</h1>
+                    <div class="edit-row">
+                        <div id="username">{{username}}</div>
+                        <!--<button id="edit-btn1" onclick="showFrmEditUsername()">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>-->
+                    </div>
+                    <h1 class="mini-header-1">PASSWORD</h1>
+                    <button id="change-pwd" onclick="showFrmChangePwd()">
+                        Change Password
+                    </button>
+                    <h1 class="mini-header-1">LOGOUT USER</h1>
+                    <form action="/logOut">
+                        <button id="log-out" href="/logOut">Log Out</button>
+                    </form>
+                    <div class="big-spacer"></div>
+                    <h1 class="mini-header-1">ACCOUNT REMOVAL</h1>
+                    <button id="del-acc" onclick="showFrmFeedback()">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/account.js" type="text/javascript"></script>
+</body>
+
+</html>

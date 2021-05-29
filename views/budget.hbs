@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Budget</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/budget.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-pie.min.js"></script>
+</head>
+
+<body>
+    <div class="popup-overlay">
+        <form class="popup-form" id="edit-budgetplan">
+            <div class="close">X</div>
+            <span style="color:black;font-weight:bold">Budget Setup</span>
+            <div class="category-list" id="budget-setup-editor">
+
+            </div>
+            <button type="submit">Submit Changes</button>
+        </form>
+    </div>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-wallet"></i>
+                        Wallet
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+            {{>navbar}}
+        </div>
+        <div class="col-6 col-s-7 card-col">
+            <div class="card" id="category-details">
+                <div id="budget-setup-item">
+                    Budget Setup
+                </div>
+                <div id="category-graph">
+                    <!-- Some graph will be here -->
+                </div>
+            </div>
+            <div class="category-history">
+                <div class="categories">
+                    Categories
+                    <button class="category-add" onclick="onClickBtnAddItem()">
+                        <img class="category-add-icon" src="images/icons/add-circle-line.png">
+                    </button>
+                </div>
+                <div class="category-item" id="add-item">
+                    <input id="blank-description" type="text" placeholder="New Category">
+                    <button class="btn-add" onclick="onClickBtnSubmitItem()">Add</button>
+                </div>
+                <div id="history">
+                    {{#each categories}}
+                    {{> category_card categoryName=categoryName icon=icon percent=percent }}
+                    {{/each}}
+                </div>
+                <button class="category-type" onclick="goToCategory(this)">
+                    <div class="category-icon">
+                        <i class="fas fa-piggy-bank fa-lg"></i>
+                    </div>
+                    <div class="category-type-details">
+                        <div class="category-type-info">
+                            <span class="category-title">Savings</span>
+                            <div id="num-savings">
+                                PhP {{savingsAmt}}
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+    <script src="../scripts/budget.js" type="text/javascript"></script>
+</body>
+
+</html>

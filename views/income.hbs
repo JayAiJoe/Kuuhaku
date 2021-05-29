@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Category</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <script src="scripts/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="css/income.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+</head>
+
+<body>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-wallet"></i>
+                        Wallet
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+            {{> navbar}}
+        </div>
+        <div class="col-6 col-s-7 card-col">
+            <div class="income-history">
+                <div class="income-month">
+                    Income per Month
+                    <button class="income-add" onclick="onClickBtnAddItem()">
+                            <img class="income-add-icon" src="images/icons/add-circle-line.png">
+                    </button>
+                </div>
+                <div class="income-item" id="add-item">
+                        <input id="blank-description" type="text" placeholder="Description">
+                        <input id="blank-price" type="text" placeholder="Income">
+                        <button class="btn-add" onclick="onClickBtnSubmitItem()">Add</button>
+                </div>
+                <div class="income-item" id="edit-item">
+                        <input id="edit-price" type="text" placeholder="Price">
+                        <div class="edit-btns">
+                            <button class="btn-delete" onclick="onClickBtnDeleteEdit()">Delete</button>
+                            <button class="btn-edit" onclick="onClickBtnSaveEdit()">Save</button>
+                        </div>
+                </div>
+                {{#each months}}
+                    {{>income_month}}
+                        {{#each record}}
+                            {{>income_record}}
+                        {{/each}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+    <script src="../scripts/income.js" type="text/javascript"></script>
+</body>
+
+</html>

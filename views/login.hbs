@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Login</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+
+    <script src="scripts/jquery.min.js"></script>
+	<script src="scripts/login.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            Member Login
+        </div>
+
+        <form>
+            <div class="item">
+                <input type="text" placeholder="Username" class="clientinfo" id="user" name ="username">
+            </div>
+            <div class="item">
+                <input type="password" placeholder="Password" class="clientinfo" id="pass" name="password">
+            </div>
+            <div class="footer">
+                <!--
+                <input type="checkbox" id="rememberme" name="rememberme" value="rememberme">
+                <label for="rememberme">Remember Me</label>
+                -->
+                <div id="error"></div>
+            </div>
+            <button type="button" class="btn" onclick="handleLogin()">Login</button>
+            <p class="signup">Don't have an account? <a href="register">Sign up</a></p>
+        </form>
+
+    </div>
+</body>
+
+</html>

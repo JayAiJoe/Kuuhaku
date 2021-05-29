@@ -1,0 +1,126 @@
+.income-add{
+    padding: 0px;
+    background-color: #1B0E44;
+    border: none;
+    outline: none;
+}
+
+.income-add-icon{
+    filter: invert(88%) sepia(9%) saturate(6622%) hue-rotate(343deg) brightness(105%) contrast(101%);
+}
+
+.income-history{
+    margin: 10px 20px;
+}
+
+.income-month{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.income-edit{
+    display: flex;
+    align-items: center;
+}
+
+.income-edit i{
+    margin-left: 7px;
+}
+
+.income-item{
+    height: 50px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #BCC3FF;
+    /* border-top: 1px solid #32617c; */
+    border-bottom: 1px solid rgba(50, 97, 124, 0.3);
+}
+
+input{
+    margin: 0px;
+    padding: 6px 7px;
+    font-size: 14px;
+    outline: none;
+    border: 1px inset gray;
+    border-radius: 4px;
+}
+
+#add-item, #edit-item{
+    justify-content: space-between;
+    display: none;
+}
+
+#blank-description{
+    width: 52%;
+}
+
+#blank-price, #edit-price{
+    width: 33%;
+}
+
+.btn-add{
+    width: 15%;
+    height: 30px;
+    padding: 0;
+    background-color:  #2E2F89;
+    color: #BCC3FF;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.btn-edit{
+    width: 43%;
+    height: 30px;
+    padding: 0;
+    background-color:  #2E2F89;
+    color: #BCC3FF;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.btn-delete{
+    width: 53%;
+    height: 30px;
+    padding: 0;
+    background-color:  red;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.edit-btn{
+    display: none;
+}
+
+.edit-btns{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.income-item:hover{
+    cursor: pointer;
+}
+
+.income-item:hover > .income-edit > .edit-btn{
+    display: block;
+}
+
+.close{
+	position:absolute;
+	top:0;
+	right: 15px;
+	color: black;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+#submit{
+	margin:20px;
+}

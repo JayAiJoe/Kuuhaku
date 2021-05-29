@@ -1,0 +1,40 @@
+IMPLEMENTED FEATURES
+ACCOUNT MANAGEMENT:
+	Register
+	Log in
+	Log out
+	View account details
+	Edit account details
+	Delete account
+BASIC:
+	Add expense
+	View expense history
+	Edit expense
+	Delete expense
+	Spending analysis
+	Add category
+	Delete category
+	Savings category
+	View savings
+	Add savings
+	Withdraw savings
+	Allocate budget
+	Edit budget allocation
+	View remaining budget
+	View income history
+	Add/update income
+	Edit income
+	Delete income
+	Remove income
+GAMIFICATION:
+	Avatar creation
+	Achievements
+
+
+
+Unimplmented:
+	Cosmetic rewards
+	Search expense history
+	Edit category
+	Levelling system
+

@@ -1,0 +1,19 @@
+NPM Modules:
+	1. mongodb
+	2. express
+	3. mongoose
+	4. dotenv
+	5. bcryptjs
+	6. asynch
+	7. body-parser
+	8. cookie-parser
+	9. express-session
+	10. http
+	11. path
+	12. url
+	13. hbs
+
+
+Assets:
+	1. Icons from fontawesome.com
+	2. Avatar Sprites by Sutemo from sutemo.itch.io

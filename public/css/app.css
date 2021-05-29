@@ -1,0 +1,414 @@
+body{
+    margin: 0;
+    margin-bottom: 100px;
+    padding: 0;
+    display: flex;
+    background-color: #1B0E44;
+    color: #FFCB17;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#nav-bar {
+    float: right;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 20px;
+	float: right;
+}
+
+.link-text {
+	padding-left: 10px;
+	visibility: hidden;
+}
+
+#nav-bar ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	width: 200px;
+	margin-left: -110px;
+}
+
+#nav-bar hr {
+	margin: 0;
+	margin-left: 50%;
+    padding: 0;
+	border: 1px solid rgba(255,255,255,0.05);
+	width: 50%
+}
+
+#nav-bar ul li{
+	margin: 0;
+	padding: 15px;
+	border-radius: 10px;
+	margin-left: 120px;
+	display: flex;
+	transition: 350ms ease;
+	white-space: nowrap;
+}
+
+#nav-bar ul li:hover {
+	margin-left: 20px;
+}
+
+#nav-bar ul li:hover .link-text {
+	visibility: visible;
+}
+
+
+#nav-bar:hover ul li {
+	display: block;
+}
+
+#nav-bar ul a{
+	color: #BCC3FF;
+	text-decoration: none;
+}
+
+#nav-bar ul li:hover{
+  background-color: #FFCB17;
+  color: #1B0E44;
+}
+
+.content-body{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.content-row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"]{
+    float: left;
+}
+
+#app-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #BCC3FF;
+    box-shadow: 0px 0px 3px black;
+}
+
+.app-header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.app-header-icon{
+    width: 44px;
+    height: 44px;
+    margin: 0px;
+    padding: 5px;
+    border: 0px;
+    outline: none;
+    color: #BCC3FF;
+    background-color: #1B0E44;
+}
+
+.section-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #BCC3FF;
+}
+
+.section-name i{
+    opacity: 50%;
+    margin-right: 5px;
+	margin-top:2px;
+}
+
+#nav-bar{
+    display: none; /*pls don't change this thanks*/
+}
+
+#app-name{
+    font-size: 30px;
+}
+
+.right-col{
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    background-color: #1B0E44;
+    border-top: 1px solid #FFCB17;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.profile-avatar{
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 2px solid #FFCB17;
+    border-radius: 50%;
+}
+
+.profile-info{
+    width: 100%;
+    margin-left: 0px;
+    color: black;
+}
+
+.profile-avatar img{
+    max-width: 100%;
+    max-height: 100%;
+	border-radius: 50%;
+}
+
+.profile-lvl{
+    height: min-content;
+    width: 50px;
+    display: unset;
+    margin: 0px 10px;
+}
+
+.lvl-lbl{
+    font-size: 11px;
+    text-align: center;
+}
+
+#lvl{
+    font-size: 15px;
+    text-align: center;
+}
+
+.profile-name{
+    color: #FFCB17;
+    display: none;
+}
+
+.profile-status-bar{
+    margin-top: 0px;
+    width: 100%;
+}
+
+.status-type{
+    font-size: 12px;
+    width: 18px;
+}
+
+.status-bar{
+    height: 6px;
+    width: 100%;
+    background-color: #32617c;
+    border-radius: 3px;
+} 
+
+.status-bar-value {
+    height: inherit;
+    border-radius: inherit;
+}
+
+.mini-header-1{
+    margin: 0px;
+    font-size: 11px;
+}
+
+.transactions-history{
+    display: none;
+}
+
+#transactions-header{
+    margin-top: 25px;
+}
+
+.search-bar{
+    height: 24px;
+    margin-top: 7px;
+}
+
+.search-box{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#search-box{
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+	background-color: #BCC3FF;
+	color: #1B0E44;
+}
+
+#search-box:focus{
+    outline: none;
+}
+
+
+button {
+	padding: 3px 15px;
+    background-color:  #FFCB17;
+	color: #1B0E44;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+#search-btn{
+    margin: 0;
+    border: none;
+	border-left: 3px solid #1B0E44;
+    border-radius: 0 10px 10px 0;
+}
+
+#search-btn img{
+    height: 90%;
+    width: auto;
+}
+
+.card{
+    padding: 20px 30px;
+}
+
+.card-col{
+    height: auto;
+}
+
+.card-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/*avatar*/
+.overlayImage {
+  position: absolute;
+  top: 0;
+}
+
+#body-overlay {
+    left: 17px;
+    top: -1px;
+}
+
+#hairbehind-overlay {
+    left: 15px;
+    top: 3px;
+}
+
+@media only screen and (min-width: 600px) {
+    .card-col{
+        height: 100%;
+        box-shadow: 0px 0px 3px black;
+    }
+    
+    #app-header{
+        display: none;
+    }
+    
+    #nav-bar{
+        display: unset;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .right-col{
+        bottom: auto;
+        position: relative;
+        padding: 20px 0px 0px 20px;
+        background-color: none;
+        border: 0px;
+    }
+
+    .profile-avatar{
+        min-width: 80px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-lvl{
+        display: none;
+    }
+
+    .profile-info{
+        margin-left: 7px;
+    }
+    
+    .profile-name{
+        font-size: 18px;
+        display: unset;
+    }
+    
+    .profile-status-bar{
+        margin-top: 10px;
+    }
+    
+    .status-type{
+        font-size: 14px;
+        width: 22px;
+    }
+    
+    .status-bar{
+        height: 8px;
+        border-radius: 3px;
+    }
+
+    .transactions-history{
+        display: unset;
+    }
+}
+
+
+
+/* ---Script below taken from w3schools---*/
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+  
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-0 {display: none;}
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+  /* ---Script above taken from w3schools---*/

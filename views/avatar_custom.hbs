@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Avatar Customization</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/all.min.css" />
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/customize.js"></script>
+</head>
+
+<body>
+    <div class="content-row">
+        <div class="col-6 col-s-6 avatar-editor">
+            <div class="avatar">
+                <h2 id="head2">Customize Avatar</h2>
+				<!--<input type="text" id="display-name" class="field" value="Joshua">-->
+				<div>
+					<i id="venus" class="fas fa-venus"></i>
+					<label class="switch">
+						<input id="toggleSex" type="checkbox" onclick="changeSex()">
+						<span class="slider round"></span>
+					</label>
+					<i id="mars" class="fas fa-mars"></i>
+				</div>
+				<button id="save-change" onclick="saveChanges()">Save Changes</button>
+				<div class="imageWrapper">
+					<img class="overlayImage"  id="hairbehind-overlay">
+					<img class="overlayImage" id="body-overlay">
+					<img class="overlayImage" id="face-overlay">
+					<img class="overlayImage" id="outfit-overlay">
+					<img class="overlayImage"  id="hairfront-overlay">
+				</div>
+            </div>
+        </div>
+        <div class="col-6 col-s-6">
+            <div class="cosmetics">
+                <table id ="options-table">
+                    <tr id="types">
+                        <th><div class="highlight"><button class="type-btn" onclick="showOptions(0)">Hair Front</button></div></th>
+						<th><div class="highlight"><button class="type-btn" onclick="showOptions(1)">Hair Behind</button></div></th>
+                        <th><div class="highlight"><button class="type-btn" onclick="showOptions(2)">Face</button></div></th>
+                        <th><div class="highlight"><button class="type-btn" onclick="showOptions(3)">Outfit</button></div></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>

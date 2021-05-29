@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Kuuhaku - Category</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/category.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-cartesian.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="scripts/category.js"></script>
+    <script src="scripts/categoryEdit.js"></script>
+</head>
+
+<body>
+    <div class="popup-overlay" id="frm-category-editor">
+        <form class="popup-form" action="javascript:;" onsubmit="submitFrmCategoryEditor(this)">
+            <div class="close" onclick="closeFrmCategoryEditor()">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <span>Edit Category</span>
+            <div class="frm-options">
+                <input class="frm-text" type="text" placeholder="Category name">
+                <input type="color" id="catcolor" name="catcolor">
+            </div>
+            <div id="frm-pick-icon">
+
+            </div>
+            <button id="submit" type="submit">Submit Changes</button>
+        </form>
+    </div>
+    <div class="content-row content-body">
+        <div class="col-2 col-s-5">
+            <div id="app-header">
+                <div class="app-header-left">
+                    <button class="app-header-icon">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="section-name">
+                        <i class="fas fa-wallet"></i>
+                        Wallet
+                    </div>
+                </div>
+                <button class="app-header-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </div>
+
+            {{> navbar}}
+        </div>
+        <div class="col-6 col-s-7 card-col">
+            <div class="card" id="category-details">
+                <div id="category-header">
+                    <div id="category-info">
+                        <button id="category-title" onclick="showFrmCategoryEditor()">
+                            <div id="category-img-container">
+                                <i class="fas fa-piggy-bank fa-fw"></i>
+                            </div>
+                            <div id="category-name">
+                                Savings
+                            </div>
+                        </button>
+                        <div id="category-price">PhP<div id="price-value">100.00</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="category-graph">
+                    <!-- Some graph will be here -->
+                    <!-- <img src="images/temp/temp-graph.png"> -->
+                </div>
+            </div>
+            <div class="category-history">
+                <div id="current">
+                    <div class="category-week">
+                        NEW SAVINGS
+                        <button class="category-add" onclick="onClickBtnAddItem()">
+                            <img class="category-add-icon" src="../images/icons/add-circle-line.png">
+                        </button>
+                    </div>
+                    <div class="category-item" id="add-item">
+                        <input id="blank-description" type="text" placeholder="Description">
+                        <input id="blank-price" type="text" placeholder="Amount">
+                        <button class="btn-add" onclick="onClickBtnSubmitItem()">Add</button>
+                    </div>
+                    <div class="category-item" id="edit-item">
+                        <input id="edit-price" type="text" placeholder="Amount">
+                        <div class="edit-btns">
+                            <button class="btn-delete" onclick="onClickBtnDeleteEdit()">Delete</button>
+                            <button class="btn-edit" onclick="onClickBtnSaveEdit()">Save</button>
+                        </div>
+                    </div>
+                </div>
+                {{#each dates}}
+                    {{> date_header}}
+                    {{#each items}}
+                        {{> expense_item}}
+                    {{/each}}
+                {{/each}}
+
+                
+            </div>
+        </div>
+        <div class="col-4 col-s-12">
+            {{> rightCol}}
+        </div>
+    </div>
+    <script src="../../scripts/category.js" type="text/javascript"></script>
+</body>
+
+</html>

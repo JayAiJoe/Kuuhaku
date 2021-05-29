@@ -1,0 +1,299 @@
+.card-col{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.app-content{
+    width: 100%;
+}
+
+.account{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.account-avatar{
+    min-height: 100px;
+    min-width: 100px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 2px solid #FFCB17;
+}
+
+.account-info{
+    width: 100%;
+    margin-left: 20px;
+    color: #FFCB17;
+}
+
+#account-name{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.account-avatar img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.account-lvl{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#lvl-num{
+    margin-left: 5px;
+}
+
+.account-status-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-status-bars{
+    margin-top: 14px;
+    width: 100%;
+}
+
+.account-status-type{
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.account-status-bar{
+    height: 3px;
+    width: 100%;
+    margin-top: 2px;
+    background-color: #32617c;
+    border-radius: 0px;
+}
+
+.account-settings{
+    margin-top: 40px;
+    color: #BCC3FF
+}
+
+#display-name, #username{
+    font-size: 20px;
+}
+
+.field {
+    background-color: #BCC3FF;
+    color: #1B0E44;
+    border: 1px solid #BCC3FF;
+}
+
+.field:focus{
+    outline: none;
+}
+
+button {
+    margin-top: 10px;
+    padding: 7px 20px;
+    background-color:  #FFCB17;
+    color: #1B0E44;
+    border: 0px;
+    outline: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+#change-pwd, #del-acc, #log-out{
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.edit-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#edit-btn{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2E2F89;
+    color: #BCC3FF;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+#edit-btn1{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2E2F89;
+    color: #BCC3FF;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+#edit-btn > i{
+    margin-right: 4px;
+}
+
+#edit-btn1 > i{
+    margin-right: 4px;
+}
+
+.mini-header-1{
+    font-weight: bold;
+    opacity: 0.7;
+    margin: 25px 0px 2px 0px;
+}
+
+.frm-input{
+    text-align: left;
+}
+
+.frm-input > .mini-header-1{
+    margin: 15px 0px 5px 0px;
+}
+
+.big-spacer{
+    margin-top: 100px;
+}
+
+#del-acc{
+    display: flex;
+    color: white;
+    background-color: red;
+}
+
+@media only screen and (min-width: 600px) {
+    .app-content{
+        width: 85%;
+    }
+}
+
+/* Popup overlay */
+.popup-overlay{
+    z-index:999;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.6);
+    position:absolute;
+    top: 0;
+    display: none;
+    justify-content:center;
+    align-items: center;
+}
+
+.popup-form{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #BCC3FF;
+    background-color: #2E2F89;
+    text-align:center;
+    border-radius:15px;
+}
+
+.popup-form > input{
+    margin: 10px;
+}
+
+.frm-title{
+    font-weight: bold;
+}
+
+.frm-text{
+    height: 35px;
+    width: 300px;
+    padding: 2px 10px;
+    color: #BCC3FF;
+    background-color: #1B0E44;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.frm-text:focus{
+    outline: none;
+    border: 1px solid #BCC3FF;
+    /* box-shadow: 0 0 5px 1px #1B0E44; */
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right: 15px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.submit{
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.frm-row{
+    display: flex;
+    margin: 10px 0px;
+}
+
+.frm-label{
+    width: 120px;
+    text-align: left;
+    font-size: 14px;
+}
+
+[type=radio]{
+    display: none;
+}
+
+[type=radio] + label{
+    margin: 0px 17px;
+}
+
+[type=radio]:checked + label > i{
+    color: #FFCB17;
+}
+
+.theader{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: right; */
+}
+
+.col-header{
+    margin: 10px 0 5px 14px;
+    width: auto;
+}
+
+.field{
+    margin-top: 10px;
+}
+
+textarea{
+    width: 100%;
+    resize: none;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+
+/*avatar*/
+.overlayImage {
+  position: absolute;
+  top: 12;
+  height:110px;
+}

@@ -1,0 +1,81 @@
+.achievements{
+    margin: 30px 20px;
+}
+
+.achievement-category{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+	padding-top: 10px;
+	border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.achievement-item {
+	margin-bottom: 10px;
+}
+
+.achievement-details{
+    height: 1rem;
+    margin-left: 20px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #BCC3FF;
+}
+
+.claim-button{
+	border: 0px;
+	background: #FFCB17;
+	color: #1B0E44;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+	visibility: hidden;
+	float: right;
+}
+
+.unlocked {
+	visibility: visible;
+}
+
+.progress-bar {
+	height: 6px;
+    width: 95%;
+    background-color: #32617c;
+    border-radius: 3px;
+	display: block;
+	margin-left: 20px;
+}
+
+/* DELETE THE ONES BELOW IN THE FUTURE */
+.category-graph img{
+    margin-top: 20px;
+    width: 100%;
+}
+
+#progress1{
+    height: inherit;
+    border-radius: inherit;
+    width: 100%;
+    background-color: #FFCB17;
+}
+
+#progress2{
+    height: inherit;
+    border-radius: inherit;
+    width: 75%;
+    background-color: #FFCB17;
+}
+
+.reward{
+    color: #FFCB17;
+    font-size: 1.5rem;
+}
+
+.locked{
+    color: #828E84;
+}

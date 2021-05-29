@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(125, 125, 125);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+.content{
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header{
+    font-size: 24px;
+    font-weight: inherit;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.item{
+    margin-bottom: 6px;
+}
+
+.clientinfo{
+    height: 40px;
+    width: 100%;
+    line-height: 14px;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border: 1px solid darkgray;
+    border-radius: 20px;
+}
+
+.clientinfo:focus{
+    outline: 0px;
+    border: 1px solid rgb(255, 0, 255);
+    box-shadow: 0px 0px 7px rgb(237, 149, 255);
+    -moz-box-shadow: 0px 0px 7px rgb(237, 149, 255);
+    -webkit-box-shadow: 0px 0px 7px rgb(237, 149, 255);
+    -o-box-shadow: 0px 0px 7px rgb(237, 149, 255);
+    border-radius: 20px;
+}
+
+.footer{
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.btn{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+
+.signup{
+    margin-top: 5;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#error{
+    color: #CF291D;
+    text-align: center;
+    height: 2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
