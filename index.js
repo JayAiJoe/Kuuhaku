@@ -6,7 +6,7 @@ const url = require('url');
 
 
 const express = require('express');
-const session = require('express-session');
+const session = require('cookie-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
@@ -50,8 +50,7 @@ app.use(session({
     rolling: true,      // refresh cookie age
     cookie: {
         maxAge: 12096e5 // two weeks
-    },
-    store: MongoStore.create({ mongoUrl: uri || 'mongodb://localhost:27017/Kuuhaku'})
+    }
 }));
 
 update.updateAchievements();
