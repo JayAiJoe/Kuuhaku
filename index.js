@@ -20,7 +20,7 @@ const MongoStore = require('connect-mongo');
 
 dotenv.config();
 port = process.env.PORT || 3000;
-hostname = '0.0.0.0';//process.env.HOSTNAME;
+hostname = process.env.HOSTNAME || '0.0.0.0';
 const uri = process.env.MONGODB_URI;
 
 const app = express();
