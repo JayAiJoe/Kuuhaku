@@ -388,20 +388,10 @@ const controller = {
 
         db.insertOne(Expense, newExpense, function (result) {
             if (result) {
+                console.log('working');
                 db.updateOne(Category, { username: req.session.username, categoryName: req.query.category }, { "$inc": { amount: -req.query.amount } },
                     function (err, doc) {
-                        if (!err) {
-                            var user = {
-                                username: req.session.username,
-                                displayname: req.session.displayname,
-                                level: req.session.level,
-                                xp: req.session.xp,
-                                avatar: req.session.avatar
-                            }
-                            db.findMany(Category, { username: req.session.username }, null, function (result) {
-                                res.render('landing', { category: result, forButton: result[0], user })
-                            });
-                        }
+                            rdc.goToLanding(req, res);                        
                     });
             }
             else {
