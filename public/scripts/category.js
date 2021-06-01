@@ -162,5 +162,5 @@ function submitFrmCategoryEditor(form) {
 
 function onClickDeleteCategory() {
     var category = document.getElementById("category-name").innerText;
-    $.post('/deleteCategory', { category: category }, function (data, status) { }); //help
+    $.get('/deleteCategory', { category: category }, function (data, status) { }); //help
 }

@@ -35,6 +35,7 @@ app.get('/getCategoryDetails', atc.getCategoryDetails);
 app.get('/getAccountDetails', atc.getAccountDetails);
 app.get('/checkPassword', atc.getCheckPassword);
 app.get('/searchExpenses', atc.searchExpenses);
+app.get('/deleteCategory', atc.deleteCategory);
 
 app.get('/getBudgetAllocation', atc.getBudgetAllocation);
 app.get('/getCategories', atc.getCategories);

@@ -373,7 +373,8 @@ const controller = {
     deleteCategory: function (req, res) {
         db.deleteOne(Category, { username: req.session.username, categoryName: req.query.category }, function (result) {
             if (result) {
-                res.render('budget', { username: req.session.username, avatar: req.session.avatar });
+                rdc.goToBudget(req,res);
+                //res.render('budget', { username: req.session.username, avatar: req.session.avatar });
             }
         });
     },
