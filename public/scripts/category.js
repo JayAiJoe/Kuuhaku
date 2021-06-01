@@ -58,6 +58,7 @@ function onClickBtnSubmitItem() {
             if (data != '') {
                 var item = document.createElement("div");
                 item.classList.add("category-item");
+
                 var desc = document.createElement("div");
                 desc.classList.add("category-item-description");
                 desc.innerText = description;
@@ -81,6 +82,7 @@ function onClickBtnSubmitItem() {
                 edit.appendChild(hiddenID);
                 item.appendChild(desc);
                 item.appendChild(edit);
+
 
                 document.getElementById("current").appendChild(item);
             }
@@ -162,5 +164,7 @@ function submitFrmCategoryEditor(form) {
 
 function onClickDeleteCategory() {
     var category = document.getElementById("category-name").innerText;
-    $.get('/deleteCategory', { category: category }, function (data, status) { }); //help
+    $.get('/deleteCategory', { category: category }, function (data, status) { 
+        window.location.href = "/budget";
+    });
 }

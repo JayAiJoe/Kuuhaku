@@ -13,6 +13,12 @@ function onClickBtnSubmitItem() {
                 var btn = document.createElement("button");
                 btn.classList.add("category-type");
 
+                btn.onclick = function ()
+                    {
+                        var categoryName = $(this).find('.category-title')[0].innerHTML;
+                        window.location.href = "/category?categoryName=" + categoryName;
+                    };
+
                 var item = document.createElement("div");
                 item.classList.add("category-icon");
                 var icon = document.createElement("i");
