@@ -62,7 +62,7 @@ const controller = {
 
                             var category = [];
                             result.forEach(function (c, i) {
-                                c.amountLeft = c.maxAmount - c.amount;
+                                c.amountLeft = c.maxAmount + c.amount; //c.amount is negative
 
                                 category.push(c);
 
