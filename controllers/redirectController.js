@@ -169,73 +169,58 @@ const controller = {
     },
 
     goToIncome: async function (req, res) {
-        async.waterfall([
-            function getDistinctDates(callback) {
-                Income.aggregate([
-                    { $match: { username: req.session.username } },
-                    {
-                        $project: {
-                            year: { "$year": "$date" },
-                            month: { "$month": "$date" }
-                        }
-                    },
-                    {
-                        $group: {
-                            _id: null,
-                            distinctDates: { "$addToSet": { year: "$year", month: "$month" } }
-                        }
-                    }
-                ], (err, results) => {
-                    callback(err, results);
-                });
+        var dateGroup = await Income.aggregate([
+            { $match: { username: req.session.username}}, 
+            {
+                $project: {
+                    year: { "$year": "$date" },
+                    month: { "$month": "$date" }
+                }
             },
-
-            function record(results, callback) {
-                var dates = results[0].distinctDates;
-
-                async.each(dates, (date, callback) => {
-                    Income.find({
-                        username: req.session.username,
-                        $expr: {
-                            $and: [
-                                { "$eq": [{ "$month": "$date" }, date.month] },
-                                { "$eq": [{ "$year": "$date" }, date.year] }
-                            ]
-                        }
-                    }, (err, result) => {
-                        date.record = result;
-                        callback();
-                    });
-                });
-
-                callback(null, dates);
+            { $sort: { date: -1 } },
+            {
+                $group: {
+                    _id: null,
+                    distinctDates: { "$addToSet": { year: "$year", month: "$month"} }
+                }
             }
-        ], (err, dates) => {
-            dates.sort((a, b) => {
-                if (a.year === b.year)
-                    return b.month - a.month;
+        ]);
 
-                return b.year - a.year;
-            })
+        var user = {
+            username: req.session.username,
+            displayname: req.session.displayname,
+            level: req.session.level,
+            hp: req.session.hp,
+            maxHp: req.session.maxHp,
+            hpPercent: req.session.hp * 100 / req.session.maxHp,
+            hpColor: "red",
+            xp: req.session.xp,
+            maxXp: req.session.maxXp,
+            xpPercent: req.session.xp * 100 / req.session.maxXp,
+            xpColor: "gold",
+            avatar: req.session.avatar,
+        };
 
-            var user = {
-                username: req.session.username,
-                displayname: req.session.displayname,
-                level: req.session.level,
-                hp: req.session.hp,
-                maxHp: req.session.maxHp,
-                hpPercent: req.session.hp * 100 / req.session.maxHp,
-                hpColor: "red",
-                xp: req.session.xp,
-                maxXp: req.session.maxXp,
-                xpPercent: req.session.xp * 100 / req.session.maxXp,
-                xpColor: "gold",
-                avatar: req.session.avatar,
-                months: dates
+        var dates;
+        if (dateGroup.length > 0) {
+            dates = dateGroup[0].distinctDates;
+            for (var i = 0; i < dates.length; i++) {
+                dates[i].record = await Income.find({
+                    username: req.session.username,
+                    $expr: {
+                        $and: [
+                            { "$eq": [{ "$month": "$date" }, dates[i].month] },
+                            { "$eq": [{ "$year": "$date" }, dates[i].year] }
+                        ]
+                    }
+                });
             };
-
-            res.render('income', user);
-        });
+        }
+        else {
+            dates = [];
+        }
+        user.months= dates;
+        res.render('income',user);
     },
 
     goToAchievements: async function (req, res) {
