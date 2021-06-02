@@ -186,6 +186,7 @@ const controller = {
         db.deleteMany(Category, { username: req.session.username }, function (result) { });
         db.deleteMany(Expense, { username: req.session.username }, function (result) { });
         db.deleteMany(Income, { username: req.session.username }, function (result) { });
+        db.deleteMany(Reward, { username: req.session.username }, function (result) { });
 
         db.deleteOne(User, { username: req.session.username }, function (result) {
             res.render('login');
