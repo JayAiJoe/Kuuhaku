@@ -430,24 +430,32 @@ const controller = {
     },
 
     editExpense: function (req, res) {
-        db.updateOne(Expense, { _id: req.query.id }, { amount: req.query.amount }, function (result) {
-            if (result) {
-                res.send('edit');
-            }
-            else {
-                res.send('');
-            }
+        db.findOne(Expense, { _id: req.query.id }, {amount:1}, function (result) {
+            db.updateOne(Category, { username: req.session.username, categoryName: req.query.category }, { "$inc": { amount: result.amount - req.query.amount }}, function(result2) {
+                db.updateOne(Expense, { _id: req.query.id }, { amount: req.query.amount }, function (result) {
+                    if (result) {
+                        res.send('edit');
+                    }
+                    else {
+                        res.send('');
+                    }
+                });
+            });
         });
     },
 
     deleteExpense: function (req, res) {
-        db.deleteOne(Expense, { _id: req.query.id }, function (result) {
-            if (result) {
-                res.send('delete');
-            }
-            else {
-                res.send('');
-            }
+        db.findOne(Expense, { _id: req.query.id }, {amount:1}, function (result) {
+            db.updateOne(Category, { username: req.session.username, categoryName: req.query.category }, { "$inc": { amount: result.amount }}, function(result2) {
+                db.deleteOne(Expense, { _id: req.query.id }, function (result3) {
+                    if (result3) {
+                        res.send('delete');
+                    }
+                    else {
+                        res.send('');
+                    }
+                });
+            });
         });
     },
 

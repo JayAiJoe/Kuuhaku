@@ -106,8 +106,9 @@ function onClickBtnEdit(elem) {
 }
 
 function onClickBtnSaveEdit() {
+    var cat =  $('#category-name').text().trim();
     var editor = document.getElementById("edit-item");
-    $.get('/editExpense', { id: editNode.nextElementSibling.innerText, amount: $('#edit-price').val() }, function (data, status) {
+    $.get('/editExpense', { id: editNode.nextElementSibling.innerText, amount: $('#edit-price').val(), category:cat }, function (data, status) {
         if (data == 'edit') {
             editor.style.display = "none";
             editNode.previousElementSibling.innerHTML = document.getElementById("edit-price").value;
@@ -117,8 +118,9 @@ function onClickBtnSaveEdit() {
 }
 
 function onClickBtnDeleteEdit() {
+    var cat =  $('#category-name').text().trim();
     var editor = document.getElementById("edit-item");
-    $.get('/deleteExpense', { id: editNode.nextElementSibling.innerText }, function (data, status) {
+    $.get('/deleteExpense', { id: editNode.nextElementSibling.innerText, category:cat}, function (data, status) {
         if (data == 'delete') {
             editor.style.display = "none";
             editNode.parentElement.parentElement.remove();
