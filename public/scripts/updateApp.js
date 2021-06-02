@@ -5,8 +5,8 @@ const db = require('../../models/db.js');
 const Achievement = require('../../models/AchievementModel.js');
 const achievmentsList = [
     {
-      "name": "Savvy Saver I",
-      "description": "Reach 2K savings",
+      "name": "Cashing In",
+      "description": "Spend 2K worth of savings",
       "countType": "Category",
       "goal": 1,
       "condition": {
@@ -15,8 +15,8 @@ const achievmentsList = [
       }
     },
     {
-      "name": "Savvy Saver II",
-      "description": "Reach 5K savings",
+      "name": "Breaking The Bank",
+      "description": "Spend 5K worth of savings",
       "countType": "Category",
       "goal": 1,
       "condition": {
@@ -25,8 +25,8 @@ const achievmentsList = [
       }
     },
     {
-      "name": "Savvy Saver III",
-      "description": "Reach 10K savings",
+      "name": "Worth It!",
+      "description": "Spend 10K worth of savings",
       "countType": "Category",
       "goal": 1,
       "condition": {
@@ -35,8 +35,8 @@ const achievmentsList = [
       }
     },
     {
-      "name": "Organized I",
-      "description": "Have 5 categories with at least P500 each",
+      "name": "Organized Spender",
+      "description": "Spend 500 in 5 categories",
       "countType": "Category",
       "goal": 5,
       "condition": {
@@ -44,8 +44,8 @@ const achievmentsList = [
       }
     },
     {
-      "name": "Organized II",
-      "description": "Have 10 categories with at least P500 each",
+      "name": "Many Mouths To Feed",
+      "description": "Spend 500 in 10 categories",
       "countType": "Category",
       "goal": 10,
       "condition": {
@@ -53,8 +53,8 @@ const achievmentsList = [
       }
     },
     {
-      "name": "Organized III",
-      "description": "Have 20 categories with at least P500 each",
+      "name": "Where Did All The Money Go?",
+      "description": "Spend 500 in 20 categories",
       "countType": "Category",
       "goal": 20,
       "condition": {
