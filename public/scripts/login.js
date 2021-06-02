@@ -6,7 +6,7 @@ function handleLogin() {
 			$('#error').text('Invalid Credentials');
 		}
 		else{
-			document.documentElement.innerHTML = data;
+			window.location.href = "/landing";
 		}
 	})
 

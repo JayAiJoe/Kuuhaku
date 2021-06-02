@@ -540,6 +540,19 @@ const controller = {
         });
     },
 
+    editCategory: function (req, res) {
+        db.updateMany(Expense, {username: req.session.username, category: req.query.oldName}, { category: req.query.name }, function (result) {
+            db.updateOne(Category, {username: req.session.username, categoryName: req.query.oldName},{categoryName:req.query.name, icon:'fa-' + req.query.icon, color:req.query.color}, function(result){
+            });
+        });
+
+    }
+
+
+        
+
+        
+
 
 
 

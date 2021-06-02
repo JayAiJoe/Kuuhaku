@@ -330,6 +330,7 @@ const controller = {
             user.dates = dates;
             user.category = req.query.categoryName; //change to current category
             user.amountLeft = amountLeft;
+            user.icon = '<i class="fas ' + result.icon + ' fa-fw"></i>';
             req.session.categoryPage = req.query.categoryName;
             res.render('category', user); //help
         });

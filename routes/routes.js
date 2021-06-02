@@ -53,6 +53,8 @@ app.get('/deleteExpense', atc.deleteExpense);
 app.get('/getAvatar', atc.getAvatar);
 app.get('/editAvatar', atc.editAvatar);
 
+app.get('/editCategory', atc.editCategory);
+
 app.get('/logOut', atc.logOut);
 module.exports = app;
 

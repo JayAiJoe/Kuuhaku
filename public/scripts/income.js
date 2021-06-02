@@ -5,50 +5,48 @@ function onClickBtnAddItem() {
     var adder = document.getElementById("add-item");
     adder.style.display = "flex";
 }
-/*
+
 function onClickBtnSubmitItem() {
     var description = document.getElementById("blank-description").value
     var price = document.getElementById("blank-price").value
     var adder = document.getElementById("add-item");
 
     if (description != "" && price != "") {
-        $.get('/addIncome', {description: description, amount: price}, function(data, status){
-            if(data!='') {
-                var item = document.createElement("div");
-                item.classList.add("income-item");
-                var desc = document.createElement("div");
-                desc.classList.add("income-item-description");
-                desc.innerText = description;
-                var edit = document.createElement("div");
-                edit.classList.add("income-edit");
-                var itemPrice = document.createElement("div");
-                itemPrice.classList.add("income-item-price");
-                itemPrice.innerText = price;
-                var btn = document.createElement("div");
-                btn.classList.add("edit-btn");
-                btn.setAttribute("onclick", "onClickBtnEdit(this)");
-                btn.innerHTML = "<i class=\"fas fa-edit\"></i>"
 
-                var hiddenID = document.createElement("div");
-                hiddenID.setAttribute('style','display:none');
-                hiddenID.innerText = data;
+        var item = document.createElement("div");
+        item.classList.add("income-item");
+        var desc = document.createElement("div");
+        desc.classList.add("income-item-description");
+        desc.innerText = description;
+        var edit = document.createElement("div");
+        edit.classList.add("income-edit");
+        var itemPrice = document.createElement("div");
+        itemPrice.classList.add("income-item-price");
+        itemPrice.innerText = price;
+        var btn = document.createElement("div");
+        btn.classList.add("edit-btn");
+        btn.setAttribute("onclick", "onClickBtnEdit(this)");
+        btn.innerHTML = "<i class=\"fas fa-edit\"></i>"
+
+        var hiddenID = document.createElement("div");
+        hiddenID.setAttribute('style','display:none');
+        hiddenID.innerText = data;
 
 
-                edit.appendChild(itemPrice);
-                edit.appendChild(btn);
-                edit.appendChild(hiddenID);
-                item.appendChild(desc);
-                item.appendChild(edit);
-                
+        edit.appendChild(itemPrice);
+        edit.appendChild(btn);
+        edit.appendChild(hiddenID);
+        item.appendChild(desc);
+        item.appendChild(edit);
+        
 
-                document.getElementById("current").appendChild(item);
-            }
-        });
-    }
+        document.getElementById("current").appendChild(item);
+    
+    };
 
     adder.style.display = "none";
 }
-*/
+
 
 function onClickBtnEdit(elem) {
     if (editNode != null) {
@@ -103,6 +101,7 @@ $(document).ready(function ()
                 $(`#${month+1}-${year}`).after(result);
                 $('#add-item').css("display","none");
                 $("form").trigger("reset");
+                onClickBtnSubmitItem();
             });
         }
     });

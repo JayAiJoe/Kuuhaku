@@ -136,6 +136,8 @@ function closeFrmCategoryEditor() {
 }
 
 function submitFrmCategoryEditor(form) {
+    var oldName =  $('#category-name').text().trim();
+    console.log(oldName);
     var response = form.elements;
     var cname = response[0].value;
     var ccolor = response[1].value;
@@ -150,16 +152,24 @@ function submitFrmCategoryEditor(form) {
         }
     }
 
+    if(cname == "")
+        {cname = oldName;}
+    if(cicon == "")
+        {cicon = 'angle-double-up';} //default
+    if(ccolor == '#000000')
+        {ccolor = 'gold';}//default
     document.getElementById("category-name").innerHTML = cname;
     document.getElementById("category-img-container").innerHTML = "<i class=\"fas fa-" + cicon + " fa-fw\"></i>"
     categoryColor = ccolor;
     loadChart();
+
 
     console.log(cname);
     console.log(ccolor);
     console.log(cicon);
 
     closeFrmCategoryEditor();
+    $.get('/editCategory',{name:cname, icon:cicon, oldName:oldName, color:ccolor}, function(data, status){});
 }
 
 function onClickDeleteCategory() {
